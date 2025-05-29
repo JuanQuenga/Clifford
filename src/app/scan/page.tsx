@@ -1,5 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { ScanButton } from "./scan-button";
 
 export default async function ScanPage() {
   const { userId, redirectToSignIn } = await auth();
@@ -19,9 +20,7 @@ export default async function ScanPage() {
               Connect your email account to start scanning for bills and BNPL
               orders.
             </p>
-            <button className="rounded-lg bg-red-600 px-6 py-3 font-medium hover:bg-red-700">
-              Connect Gmail
-            </button>
+            <ScanButton />
           </div>
 
           {/* Scan Status Card */}
@@ -63,7 +62,8 @@ export default async function ScanPage() {
                 2. Scan
               </div>
               <p className="text-gray-300">
-                We'll scan your emails for bills and BNPL orders automatically.
+                We&apos;ll scan your emails for bills and BNPL orders
+                automatically.
               </p>
             </div>
             <div className="rounded-lg bg-white/5 p-4">
